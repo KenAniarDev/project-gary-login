@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  overflow-x: hidden;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Welcome Page */
+.welcome-container {
+  color: white;
+  background: linear-gradient(180deg, #3878e8 0%, #274da7 73.96%);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.text {
+  width: 15rem;
+}
+.welcome-container .next {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 262.26px;
+  height: 58px;
+  left: 81px;
+  top: 437px;
+  background: #397bec;
+  border-radius: 58px;
+}
+.welcome-container .skip {
+}
+.welcome-container .dots li:before {
+  margin-right: 10px;
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #5f6aff;
+}
+
+.welcome-container .dots li.active:before {
+  background-color: #fafafa;
+}
+
+/* Login */
+.login-container {
+  position: relative;
+}
+.login-container .shape-top-left {
+  position: fixed;
+  z-index: -1;
+  width: 350px;
+  height: 350px;
+  left: -86px;
+  top: -185px;
+  border-radius: 50%;
+  background-color: #397bec;
+}
+.login-container .shape-top-right {
+  position: fixed;
+  z-index: -1;
+  width: 240px;
+  height: 240px;
+  right: -18px;
+  top: -100px;
+  border-radius: 50%;
+  background-color: #397bec;
+}
+.login-container .shape-bottom-right {
+  position: fixed;
+  z-index: -1;
+  width: 366px;
+  height: 366px;
+  bottom: -270px;
+  right: -200px;
+  border-radius: 50%;
+  background-color: #397bec;
+}
+.login-container .shape-bottom-left {
+  position: fixed;
+  z-index: -1;
+  width: 366px;
+  height: 366px;
+  bottom: -280px;
+  left: -210px;
+  border-radius: 50%;
+  background-color: #397bec;
+}
+.content-top-left {
+  position: fixed;
+  top: 30px;
+  left: 30px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.content-top-right {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: white;
+}
+.back {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+#email {
+  border-color: #397bec;
+  border-width: 1px;
+}
+#password {
+  border-width: 1px;
+  border-color: #397bec;
+}
+.login-container .forgot {
+  font-weight: 500;
+  font-size: 12px;
+  color: #484848;
+}
+.form-container {
+  padding: 0 30px;
+}
+.login-form {
+  margin-top: 120px;
+}
+.login-form label {
+  border-color: #397bec;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-form label:before,
+.login-form label::after {
+  border-color: #397bec !important;
+  border-width: 1px;
+}
+.login-form button {
+  width: 262.26px;
+  height: 58px;
+  background: #397bec;
+  border-radius: 58px;
+}
+/* Inputs */
+.input-group {
+  width: 360px;
+  position: relative;
+  border: 2px solid #397bec;
+  border-radius: 12px;
+}
+.input-group input {
+  padding: 12px;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  color: #484848;
+  font-size: 18px;
+  line-height: 1;
+  outline: none;
+}
+
+.input-group:hover,
+.input-group:focus-within {
+  border-color: #397bec;
+}
+
+.input-group input:focus,
+.input-group:hover input {
+  color: #484848;
+}
+
+.input-group label {
+  position: absolute;
+  background-color: transparent;
+  padding: 12px;
+  line-height: 1.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: #484848;
+  cursor: text;
+}
+
+.input-group:hover label {
+  color: #484848;
+  transition: 300ms ease;
+}
+
+.input-group:focus-within label,
+.input-group input:not(:placeholder-shown) ~ label {
+  padding: 0px 8px;
+  top: -12px;
+  left: 16px;
+  bottom: auto;
+  color: #484848;
+  background-color: white;
+  font-size: 14px;
+}
+
+/* Toggle A */
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #397bec;
+}
+
+select.bordered {
+  border: 2px solid #397bec;
+  border-radius: 12px;
+  padding: 10px;
+  outline: none;
 }
